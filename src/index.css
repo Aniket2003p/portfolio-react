@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0b1324, #0f1f3d);
+  color: white;
+}
+
+/* Floating background gradient animation */
+body::before {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.15), transparent 70%);
+  top: -200px;
+  left: -200px;
+  animation: floatBg 12s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes floatBg {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(200px, 150px);
+  }
+}
